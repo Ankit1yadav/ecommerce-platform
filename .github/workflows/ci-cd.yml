@@ -48,8 +48,8 @@ jobs:
           registry-type: private
       - name: Push to ECR
         run: |
-          docker tag product-service:latest 123456789012.dkr.ecr.us-east-2.amazonaws.com/product-service:latest
-          docker push 123456789012.dkr.ecr.us-east-2.amazonaws.com/product-service:latest
+          docker tag product-service:latest 777380868386.dkr.ecr.us-east-2.amazonaws.com/product-service:latest
+          docker push 777380868386.dkr.ecr.us-east-2.amazonaws.com/product-service:latest
       - name: Deploy to ECS
         run: aws ecs update-service --cluster ecommerce-cluster --service product-service-service --force-new-deployment
 
