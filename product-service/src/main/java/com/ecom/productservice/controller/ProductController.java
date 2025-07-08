@@ -15,6 +15,11 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "Hello World";
+    }
+
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
