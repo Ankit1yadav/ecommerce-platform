@@ -15,7 +15,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/hello")
+    @GetMapping("/hi")
     public String sayHello(){
         return "Hello World";
     }
