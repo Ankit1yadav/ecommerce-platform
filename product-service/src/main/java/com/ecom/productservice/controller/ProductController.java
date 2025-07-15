@@ -15,19 +15,24 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @GetMapping("/hi")
+    public String sayHello() {
+        return "Hello World";
+    }
+
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
+    public ResponseEntity<Product> getProductById(@PathVariable int id) {
         Optional<Product> product = productService.getProductById(id);
         return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product) {
+    public boolean createProduct(@RequestBody Product product) {
         return productService.createProduct(product);
     }
 
