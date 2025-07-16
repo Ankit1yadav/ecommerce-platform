@@ -1,7 +1,4 @@
 spring:
-  profiles:
-    active: cloud
-  dspring:
     datasource:
       url: jdbc:postgresql://product-db.ct4ogyo2wvaz.us-east-2.rds.amazonaws.com:5432/productdb
       username: ankit
@@ -13,10 +10,6 @@ cloud:
       use-default-aws-credentials-chain: true
     region:
       static: us-east-1
-eureka:
-  client:
-    service-url:
-      defaultZone: http://discovery-service:8761/eureka/
 server:
   port: 8081
 management:
