@@ -1,3 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://product-db.ct4ogyo2wvaz.us-east-2.rds.amazonaws.com:5432/productdb
+    username: ankit
+    password: ankit12345
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # Use 'create' to generate tables, 'update' to modify existing ones, or 'none' to do it manually
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 cloud:
   aws:
     credentials:
