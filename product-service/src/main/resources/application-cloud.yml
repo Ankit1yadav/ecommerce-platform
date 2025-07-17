@@ -1,9 +1,3 @@
-spring:
-    datasource:
-      url: jdbc:postgresql://product-db.ct4ogyo2wvaz.us-east-2.rds.amazonaws.com:5432/productdb
-      username: ankit
-      password: ankit12345
-      driver-class-name: org.postgresql.Driver
 cloud:
   aws:
     credentials:
