@@ -51,7 +51,7 @@ jobs:
           docker tag product-service:latest 777380868386.dkr.ecr.us-east-2.amazonaws.com/product-service:latest
           docker push 777380868386.dkr.ecr.us-east-2.amazonaws.com/product-service:latest
       - name: Deploy to ECS
-        run: aws ecs update-service --cluster ecommerce-cluster-v2  --service product-service-task-v2-service --force-new-deployment
+        run: aws ecs update-service --cluster my-ecommerce-cluster  --service product-service-service --force-new-deployment
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
