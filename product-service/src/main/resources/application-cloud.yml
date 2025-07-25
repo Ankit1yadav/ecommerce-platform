@@ -1,13 +1,15 @@
 spring:
-    datasource:
-      url: jdbc:postgresql://product-db.ct4ogyo2wvaz.us-east-2.rds.amazonaws.com:5432/productdb
-      username: ankit
-      password: ankit12345
-      driver-class-name: org.postgresql.Driver
-cloud:
-  aws:
-    credentials:
-      use-default-aws-credentials-chain: true
+  datasource:
+    url: jdbc:mysql://test.ct4ogyo2wvaz.us-east-2.rds.amazonaws.com:3306/ProductDB
+    username: ankit
+    password: ankit12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # Use 'create' to generate tables, 'update' to modify, or 'none' for manual
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
     region:
       static: us-east-1
 server:
@@ -17,3 +19,8 @@ management:
     web:
       exposure:
         include: health
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
